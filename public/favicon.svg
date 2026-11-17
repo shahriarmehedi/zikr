@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="64" height="64" rx="16" fill="#08090d" />
+  <rect width="62" height="62" x="1" y="1" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+  
+  <!-- Outer Tasbih Ring -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5" />
+  <circle cx="32" cy="32" r="20" fill="none" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="45 80" />
+  
+  <!-- Top Main Bead -->
+  <circle cx="32" cy="12" r="3.5" fill="#34d399" />
+  
+  <!-- Subtle Center Drop -->
+  <circle cx="32" cy="32" r="4.5" fill="#ffffff" />
+</svg>

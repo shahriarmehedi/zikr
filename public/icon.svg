@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141724" />
+      <stop offset="100%" stop-color="#07080c" />
+    </radialGradient>
+    <radialGradient id="emeraldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#10b981" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark Rounded App Icon Background -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGlow)" />
+  <rect width="510" height="510" x="1" y="1" rx="127" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+
+  <!-- Ambient Glow in the Center -->
+  <circle cx="256" cy="256" r="160" fill="url(#emeraldGlow)" />
+
+  <!-- Circular Tasbih Bead Path -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6" />
+
+  <!-- Beads around circle (33 beads stylized) -->
+  <!-- Main Accent Ring Segment -->
+  <circle
+    cx="256"
+    cy="256"
+    r="140"
+    fill="none"
+    stroke="url(#ringGrad)"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-dasharray="240 640"
+    filter="url(#softGlow)"
+  />
+
+  <!-- Tasbih Beads (Key positions) -->
+  <g fill="#10b981">
+    <circle cx="256" cy="116" r="16" filter="url(#softGlow)" fill="#34d399" />
+    <circle cx="326" cy="134" r="10" opacity="0.85" />
+    <circle cx="377" cy="185" r="10" opacity="0.85" />
+    <circle cx="396" cy="256" r="12" fill="#34d399" opacity="0.9" />
+    <circle cx="377" cy="327" r="10" opacity="0.85" />
+    <circle cx="326" cy="378" r="10" opacity="0.85" />
+    <circle cx="256" cy="396" r="14" fill="#34d399" opacity="0.9" />
+    <circle cx="186" cy="378" r="10" opacity="0.85" />
+    <circle cx="135" cy="327" r="10" opacity="0.85" />
+    <circle cx="116" cy="256" r="12" fill="#34d399" opacity="0.9" />
+    <circle cx="135" cy="185" r="10" opacity="0.85" />
+    <circle cx="186" cy="134" r="10" opacity="0.85" />
+  </g>
+
+  <!-- Beautiful Arabic Calligraphy Symbol in Center (Allah / Zikr peace motif) -->
+  <path
+    d="M 235 295 C 230 290 220 270 230 245 C 235 230 250 215 256 215 C 262 215 277 230 282 245 C 292 270 282 290 277 295 C 267 305 245 305 235 295 Z"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.95"
+  />
+  <circle cx="256" cy="190" r="7" fill="#34d399" filter="url(#softGlow)" />
+</svg>
