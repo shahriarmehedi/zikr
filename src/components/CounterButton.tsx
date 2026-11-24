@@ -181,6 +181,7 @@ export const CounterButton: React.FC = () => {
             background: 'radial-gradient(circle at 50% 30%, #1c1d25, #0c0d12 85%)',
             boxShadow: `inset 0 1px 2px rgba(255,255,255,0.08), 0 15px 35px -10px rgba(0,0,0,0.8), 0 0 35px -5px ${theme.glow}`,
             border: '1px solid rgba(255, 255, 255, 0.07)',
+            touchAction: 'manipulation',
           }}
           aria-label="Tap to count zikr"
         >
