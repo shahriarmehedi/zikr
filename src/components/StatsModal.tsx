@@ -158,7 +158,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                     <TrendingUp className="w-3.5 h-3.5 text-zinc-400" />
                     {t.lifetime}
                   </span>
-                  <span className="text-xl sm:text-2xl font-light font-mono text-white">
+                  <span className="text-xl sm:text-2xl font-bold text-white">
                     {formatDisplayNumber(stats.lifetimeTotal, settings.numeralSystem)}
                   </span>
                 </div>
@@ -170,7 +170,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                     {t.today}
                   </span>
                   <span
-                    className="text-xl sm:text-2xl font-light font-mono"
+                    className="text-xl sm:text-2xl font-bold"
                     style={{ color: theme.primary }}
                   >
                     {formatDisplayNumber(stats.todayTotal, settings.numeralSystem)}
@@ -183,9 +183,9 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                     <Flame className="w-3.5 h-3.5 text-amber-500" />
                     {t.streak}
                   </span>
-                  <span className="text-xl sm:text-2xl font-light font-mono text-white">
+                  <span className="text-xl sm:text-2xl font-bold text-white">
                     {formatDisplayNumber(stats.currentStreak, settings.numeralSystem)}{' '}
-                    <span className="text-xs text-zinc-500 font-sans">{t.days}</span>
+                    <span className="text-xs text-zinc-500 font-normal">{t.days}</span>
                   </span>
                 </div>
 
@@ -195,9 +195,9 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                     <Award className="w-3.5 h-3.5 text-amber-400" />
                     {t.bestStreak}
                   </span>
-                  <span className="text-xl sm:text-2xl font-light font-mono text-white">
+                  <span className="text-xl sm:text-2xl font-bold text-white">
                     {formatDisplayNumber(stats.bestStreak, settings.numeralSystem)}{' '}
-                    <span className="text-xs text-zinc-500 font-sans">{t.days}</span>
+                    <span className="text-xs text-zinc-500 font-normal">{t.days}</span>
                   </span>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                   <CalendarIcon className="w-4 h-4 text-zinc-500" />
                   <span>
                     {t.startedOn}:{' '}
-                    <span className="text-zinc-200">
+                    <span className="text-zinc-200 font-semibold">
                       {formatSelectedDateHuman(settings.startDate)}
                     </span>
                   </span>
@@ -216,7 +216,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                 <div>
                   <span className="text-zinc-400">
                     {t.daysAgo}:{' '}
-                    <span className="text-zinc-200 font-mono">
+                    <span className="text-zinc-200 font-bold">
                       {formatDisplayNumber(stats.daysSinceStart, settings.numeralSystem)} {t.days}
                     </span>
                   </span>
@@ -291,12 +291,12 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                         key={day.dateStr}
                         type="button"
                         onClick={() => setSelectedDateStr(day.dateStr)}
-                        className={`h-9 sm:h-11 rounded-xl flex flex-col items-center justify-center relative transition-all cursor-pointer text-xs font-mono border ${
+                        className={`h-9 sm:h-11 rounded-xl flex flex-col items-center justify-center relative transition-all cursor-pointer text-xs font-bold border ${
                           isSelected
                             ? 'border-white bg-zinc-800 text-white shadow-lg'
                             : hasCount
                             ? 'border-zinc-700/60 bg-zinc-900/80 text-zinc-200 hover:bg-zinc-800'
-                            : 'border-zinc-800/40 bg-zinc-950/40 text-zinc-500 hover:bg-zinc-900/40'
+                            : 'border-zinc-800/40 bg-zinc-950/40 text-zinc-500 hover:bg-zinc-900/40 font-medium'
                         }`}
                         style={
                           hasCount && !isSelected
@@ -335,7 +335,7 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                   <div className="text-right">
                     <span className="text-xs text-zinc-500 block">{t.total}</span>
                     <span
-                      className="text-lg font-mono font-medium"
+                      className="text-lg font-bold"
                       style={{ color: selectedDayTotal > 0 ? theme.primary : '#71717a' }}
                     >
                       {formatDisplayNumber(selectedDayTotal, settings.numeralSystem)} {t.timesRecited}
@@ -371,11 +371,11 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                                 {zikrName}
                               </span>
                             </div>
-                            <div className="flex items-center gap-3 text-xs font-mono">
-                              <span className="text-zinc-400">
+                            <div className="flex items-center gap-3 text-xs">
+                              <span className="text-zinc-200 font-bold">
                                 {formatDisplayNumber(count, settings.numeralSystem)} {t.timesRecited}
                               </span>
-                              <span className="text-zinc-600 font-sans">({formatDisplayNumber(pct, settings.numeralSystem)}%)</span>
+                              <span className="text-zinc-500 font-semibold">({formatDisplayNumber(pct, settings.numeralSystem)}%)</span>
                             </div>
                           </div>
                         );
@@ -407,9 +407,11 @@ export const StatsModal: React.FC<StatsModalProps> = ({ isOpen, onClose }) => {
                         <div key={z.id} className="text-xs">
                           <div className="flex justify-between text-zinc-300 mb-1">
                             <span>{name}</span>
-                            <span className="font-mono text-zinc-400">
-                              {formatDisplayNumber(z.totalCount || 0, settings.numeralSystem)} (
-                              {formatDisplayNumber(pct, settings.numeralSystem)}%)
+                            <span className="font-bold text-zinc-200">
+                              {formatDisplayNumber(z.totalCount || 0, settings.numeralSystem)}{' '}
+                              <span className="text-zinc-500 font-semibold">
+                                ({formatDisplayNumber(pct, settings.numeralSystem)}%)
+                              </span>
                             </span>
                           </div>
                           <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">

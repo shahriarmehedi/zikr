@@ -92,7 +92,7 @@ function MainZikrApp() {
               <span>{t.today}</span>
             </div>
             <div
-              className="text-sm sm:text-base font-mono font-medium"
+              className="text-sm sm:text-base font-bold"
               style={{ color: theme.primary }}
             >
               {formatDisplayNumber(stats.todayTotal, settings.numeralSystem)}
@@ -108,9 +108,9 @@ function MainZikrApp() {
               <Flame className="w-3 h-3 text-amber-500" />
               <span>{t.streak}</span>
             </div>
-            <div className="text-sm sm:text-base font-mono font-medium text-zinc-200">
+            <div className="text-sm sm:text-base font-bold text-zinc-200">
               {formatDisplayNumber(stats.currentStreak, settings.numeralSystem)}{' '}
-              <span className="text-[10px] text-zinc-500 font-sans">{t.days}</span>
+              <span className="text-[10px] text-zinc-500 font-normal">{t.days}</span>
             </div>
           </div>
 
@@ -123,7 +123,7 @@ function MainZikrApp() {
               <TrendingUp className="w-3 h-3 text-zinc-400" />
               <span>{t.lifetime}</span>
             </div>
-            <div className="text-sm sm:text-base font-mono font-medium text-zinc-200">
+            <div className="text-sm sm:text-base font-bold text-zinc-200">
               {formatDisplayNumber(stats.lifetimeTotal, settings.numeralSystem)}
             </div>
           </div>

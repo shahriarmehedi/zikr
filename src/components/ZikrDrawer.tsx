@@ -188,16 +188,21 @@ export const ZikrDrawer: React.FC<ZikrDrawerProps> = ({ isOpen, onClose }) => {
                               )}
 
                               {/* Target & Total Info */}
-                              <div className="flex items-center gap-3 text-xs text-zinc-400 mt-2 font-mono">
+                              <div className="flex items-center gap-3 text-xs text-zinc-400 mt-2">
                                 <span>
                                   {t.target}:{' '}
-                                  {zikr.target > 0
-                                    ? formatDisplayNumber(zikr.target, settings.numeralSystem)
-                                    : t.unlimited}
+                                  <span className="font-bold text-zinc-200">
+                                    {zikr.target > 0
+                                      ? formatDisplayNumber(zikr.target, settings.numeralSystem)
+                                      : t.unlimited}
+                                  </span>
                                 </span>
                                 <span className="text-zinc-600">•</span>
                                 <span>
-                                  {t.total}: {formatDisplayNumber(zikr.totalCount || 0, settings.numeralSystem)}
+                                  {t.total}:{' '}
+                                  <span className="font-bold text-zinc-200">
+                                    {formatDisplayNumber(zikr.totalCount || 0, settings.numeralSystem)}
+                                  </span>
                                 </span>
                               </div>
                             </div>

@@ -208,17 +208,20 @@ export const CounterButton: React.FC = () => {
           {/* Completed Laps Badge (if any) */}
           {(activeZikr.completedLaps || 0) > 0 && (
             <div className="mb-1 text-[11px] font-medium tracking-wider uppercase px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 border border-zinc-700/50">
-              {t.round} {formatDisplayNumber(activeZikr.completedLaps, settings.numeralSystem)}
+              {t.round}{' '}
+              <span className="font-bold text-zinc-200">
+                {formatDisplayNumber(activeZikr.completedLaps, settings.numeralSystem)}
+              </span>
             </div>
           )}
 
-          {/* Main Counter Digits */}
+          {/* Main Counter Digits (Bold in both Bengali & English) */}
           <motion.div
             key={count}
             initial={{ scale: 1.15, opacity: 0.8 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="text-6xl sm:text-7xl font-extralight tracking-tight text-white my-1 tabular-nums font-mono drop-shadow-sm"
+            className="text-6xl sm:text-7xl font-bold tracking-tight text-white my-1 tabular-nums drop-shadow-sm"
           >
             {formatDisplayNumber(count, settings.numeralSystem)}
           </motion.div>
@@ -227,9 +230,14 @@ export const CounterButton: React.FC = () => {
           <div className="flex items-center gap-1.5 text-xs text-zinc-400 mt-1">
             {target > 0 ? (
               <span>
-                {formatDisplayNumber(count, settings.numeralSystem)} /{' '}
-                {formatDisplayNumber(target, settings.numeralSystem)}{' '}
-                <span className="text-zinc-500">
+                <span className="font-bold text-zinc-200">
+                  {formatDisplayNumber(count, settings.numeralSystem)}
+                </span>{' '}
+                /{' '}
+                <span className="font-bold text-zinc-300">
+                  {formatDisplayNumber(target, settings.numeralSystem)}
+                </span>{' '}
+                <span className="text-zinc-500 font-semibold">
                   ({formatDisplayNumber(Math.round(progressPercentage), settings.numeralSystem)}%)
                 </span>
               </span>
